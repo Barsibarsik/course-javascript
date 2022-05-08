@@ -12,8 +12,8 @@
 
  Другими словами: функция должна возвращать в неизменном виде то, что поступает ей на вход
  */
-function returnFirstArgument(Hello) {
-  return arguments[0];
+function returnFirstArgument(value) {
+  return value;
 }
 
 /*
@@ -30,9 +30,8 @@ function returnFirstArgument(Hello) {
  Пример:
    sumWithDefaults(10) вернет 110
  */
-function sumWithDefaults(a, b) {
-  const c = b || 100;
-  return a + c;
+function sumWithDefaults(a, b = 100) {
+  return a + b;
 }
 
 /*
