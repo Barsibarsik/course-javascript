@@ -25,8 +25,10 @@ function delayPromise(seconds) {
  Пример:
    loadAndSortTowns().then(towns => console.log(towns)) // должна вывести в консоль отсортированный массив городов
  */
-function loadAndSortTowns() {
-  const res = await fetch('https://raw.githubusercontent.com/smelukov/citiesTest/master/cities.json');
+async function loadAndSortTowns() {
+  const res = await fetch(
+    'https://raw.githubusercontent.com/smelukov/citiesTest/master/cities.json'
+  );
   const towns = await res.json();
   return towns.sort((a, b) => a.name.localeCompare(b.name));
 }

@@ -30,6 +30,7 @@
  */
 
 import './towns.html';
+import { loadAndSortTowns } from './functions';
 
 const homeworkContainer = document.querySelector('#app');
 
@@ -39,8 +40,8 @@ const homeworkContainer = document.querySelector('#app');
  Массив городов пожно получить отправив асинхронный запрос по адресу
  https://raw.githubusercontent.com/smelukov/citiesTest/master/cities.json
  */
-function loadTowns() {
-  return loadAndSortTowns();
+async function loadTowns() {
+  return await loadAndSortTowns();
 }
 
 /*
@@ -101,7 +102,7 @@ function upDateFilter(filterValue) {
 
   const fragment = document.createDocumentFragment();
 
-  for (const towm of towns) {
+  for (const town of towns) {
     if (filterValue && isMatching(town.name, filterValue)) {
       const townDiv = document.createElement('div');
       townDiv.textContent = town.name;
